@@ -49,4 +49,17 @@ body {
   animation: fadeUp 0.6s 0.3s ease-out both;
 }
 
-/* card expand/collapse and icon rotation now handled via inline styles */
+/* details/summary card styles */
+.service-card summary::-webkit-details-marker,
+.service-card summary::marker {
+  display: none;
+  content: "";
+}
+
+.service-card-icon {
+  transition: transform 0.25s ease;
+}
+
+.service-card[open] > summary .service-card-icon {
+  transform: rotate(45deg);
+}
