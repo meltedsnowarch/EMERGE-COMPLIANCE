@@ -39,7 +39,7 @@ const HOW_IT_WORKS = [
   },
   {
     step: "04",
-    title: "Certificate issued same day",
+    title: "Certificate issued within 48 hours",
     body: "The signed, certified document is issued to the homeowner, solicitor or estate agent within 48 hours.",
   },
 ] as const;
