@@ -16,9 +16,9 @@ const DELAY = [
 
 /* All column headers use the same card colour */
 const COLUMN_BG: Record<ServiceCategory, string> = {
-  "maps-declarations":   "#F0F2F4",
-  "compliance-opinions": "#F0F2F4",
-  planning:              "#F0F2F4",
+  "maps-declarations":   "#1B2A4A",
+  "compliance-opinions": "#1B2A4A",
+  planning:              "#1B2A4A",
 };
 
 const HOW_IT_WORKS = [
@@ -94,20 +94,21 @@ export default function HomePage() {
               return (
                 <div
                   key={category}
-                  className={`border border-stone-200 overflow-hidden ${DELAY[i]}`}
+                  className={`overflow-hidden ${DELAY[i]}`}
+                  style={{ background: "#1B2A4A", border: "1px solid #243a62" }}
                 >
                   {/* Colour band header */}
                   <div
-                    className="px-5 py-4 border-b border-stone-200"
-                    style={{ background: COLUMN_BG[category] }}
+                    className="px-5 py-4"
+                    style={{ borderBottom: "1px solid #243a62", background: "#1B2A4A" }}
                   >
-                    <p className="text-sm font-bold tracking-tight" style={{ color: "#1B2A4A" }}>
+                    <p className="text-sm font-bold tracking-tight" style={{ color: "#FFFFFF" }}>
                       {CATEGORY_LABELS[category]}
                     </p>
                   </div>
 
                   {/* Service rows */}
-                  <ul className="px-5">
+                  <ul className="px-5" style={{ background: "#1B2A4A" }}>
                     {services.map((service) => (
                       <li key={service.slug}>
                         <Link

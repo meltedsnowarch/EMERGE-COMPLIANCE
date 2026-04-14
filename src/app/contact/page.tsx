@@ -47,6 +47,11 @@ export default function ContactPage() {
 
         </div>
 
+        {/* ── Bridging line ───────────────────────────────────────────── */}
+        <p className="mb-6 text-xs text-stone-400 animate-fade-up-delay-1">
+          To book a service please contact James directly:
+        </p>
+
         {/* ── Contact details ─────────────────────────────────────────── */}
         <div className="mb-10 animate-fade-up-delay-1">
           <div className="space-y-3">
