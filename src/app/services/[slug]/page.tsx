@@ -65,7 +65,7 @@ export default async function ServicePage({
 
           {/* Left — description (2/3 width) */}
           <div className="md:col-span-2 animate-fade-up">
-            <p className="text-sm text-stone-600 leading-[1.8]">
+            <p className="text-sm leading-[1.8]" style={{ color: "#1A1A1A" }}>
               {service.description}
             </p>
           </div>
@@ -77,13 +77,13 @@ export default async function ServicePage({
               <p className="text-sm text-stone-700 leading-relaxed">
                 Prepared by James Lawler, MRIAI, Dublin, Ireland
               </p>
-              <p className="text-sm font-semibold text-stone-800">
+              <p className="text-sm font-semibold" style={{ color: "#2C2C2A" }}>
                 {service.price}
               </p>
               <Link
                 href="/contact"
-                className="block text-center text-sm font-semibold uppercase tracking-widest py-3 px-4 border border-stone-400 text-stone-800 transition-colors hover:border-stone-600"
-                style={{ background: "#BBBAB6" }}
+                className="block text-center text-sm font-semibold uppercase tracking-widest py-3 px-4 transition-colors hover:opacity-80"
+                style={{ background: "#212120", color: "#F5F0EA", border: "1px solid #212120" }}
               >
                 Book Now
               </Link>

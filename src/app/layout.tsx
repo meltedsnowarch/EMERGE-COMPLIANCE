@@ -11,8 +11,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: "EMERGE Legal — Architectural Compliance Services Ireland",
-    template: "%s | EMERGE Legal",
+    default: "EMERGE Compliance — Architectural Compliance Services Ireland",
+    template: "%s | EMERGE Compliance",
   },
   description:
     "Architectural compliance documents for solicitors and estate agents across Ireland. Land Registry maps, Opinions on Compliance, Planning Certificates, and Declarations of Identity. RIAI registered architect. 48-hour turnaround.",
@@ -38,17 +38,18 @@ export default function RootLayout({
         {/* ── HEADER / NAV ─────────────────────────────────────────────── */}
         <header
           data-design-id="nav"
-          className="fixed top-0 left-0 right-0 z-50 border-b border-stone-200"
-          style={{ background: "#F7F3EB" }}
+          className="fixed top-0 left-0 right-0 z-50 border-b border-stone-700"
+          style={{ background: "#2C2C2A" }}
         >
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <Link
               data-design-id="nav-logo"
               href="/"
-              className="text-base tracking-tight text-stone-900 hover:opacity-80 transition-opacity"
+              className="text-base tracking-tight hover:opacity-80 transition-opacity"
+              style={{ color: "#F5F0EA" }}
             >
               <span className="font-bold">EMERGE</span>
-              <span className="font-light"> Legal</span>
+              <span className="font-light"> Compliance</span>
             </Link>
 
             <nav
@@ -57,19 +58,22 @@ export default function RootLayout({
             >
               <Link
                 href="/#services"
-                className="text-sm text-stone-500 hover:text-stone-900 transition-colors hidden sm:block"
+                className="text-sm transition-colors hidden sm:block hover:opacity-70"
+                style={{ color: "#F5F0EA" }}
               >
                 Services
               </Link>
               <Link
                 href="/#how-it-works"
-                className="text-sm text-stone-500 hover:text-stone-900 transition-colors hidden sm:block"
+                className="text-sm transition-colors hidden sm:block hover:opacity-70"
+                style={{ color: "#F5F0EA" }}
               >
                 How it works
               </Link>
               <Link
                 href="/contact"
-                className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
+                className="text-sm transition-colors hover:opacity-70"
+                style={{ color: "#F5F0EA" }}
               >
                 Contact
               </Link>
@@ -84,11 +88,11 @@ export default function RootLayout({
         {/* ── FOOTER ───────────────────────────────────────────────────── */}
         <footer
           data-design-id="footer"
-          className="border-t border-stone-200 px-6 py-6"
-          style={{ background: "#FAF8F3" }}
+          className="border-t border-stone-700 px-6 py-6"
+          style={{ background: "#2C2C2A" }}
         >
           <div className="max-w-5xl mx-auto">
-            <p className="text-xs text-stone-500">
+            <p className="text-xs" style={{ color: "#F5F0EA" }}>
               James Lawler &middot; RIAI Registered Member &middot; 2026
             </p>
           </div>

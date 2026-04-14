@@ -14,11 +14,11 @@ const DELAY = [
   "animate-fade-up-delay-4",
 ] as const;
 
-/* All column headers use the Compliance Opinions colour */
+/* All column headers use the same card colour */
 const COLUMN_BG: Record<ServiceCategory, string> = {
-  "maps-declarations":   "#F7F3EB",
-  "compliance-opinions": "#F7F3EB",
-  planning:              "#F7F3EB",
+  "maps-declarations":   "#E8E0D5",
+  "compliance-opinions": "#E8E0D5",
+  planning:              "#E8E0D5",
 };
 
 const HOW_IT_WORKS = [
@@ -135,24 +135,28 @@ export default function HomePage() {
       <section
         data-design-id="how-it-works"
         id="how-it-works"
-        className="border-b border-stone-100 px-6 py-16 sm:py-20"
-        style={{ background: "#FAF8F3" }}
+        className="border-b border-stone-700 px-6 py-16 sm:py-20"
+        style={{ background: "#2C2C2A" }}
       >
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-10 animate-fade-up">
+          <p className="text-xs font-semibold uppercase tracking-widest mb-10 animate-fade-up"
+            style={{ color: "#6B6B68" }}>
             How it works
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
             {HOW_IT_WORKS.map((item, i) => (
               <div key={item.step} className={DELAY[i]}>
-                <p className="text-4xl font-bold text-stone-200 mb-5 tracking-tight leading-none">
+                <p className="text-4xl font-bold mb-5 tracking-tight leading-none"
+                  style={{ color: "#454542" }}>
                   {item.step}
                 </p>
-                <h3 className="text-sm font-semibold text-stone-900 mb-2 leading-snug">
+                <h3 className="text-sm font-semibold mb-2 leading-snug"
+                  style={{ color: "#F5F0EA" }}>
                   {item.title}
                 </h3>
-                <p className="text-sm text-stone-500 leading-relaxed">
+                <p className="text-sm leading-relaxed"
+                  style={{ color: "#9E9A95" }}>
                   {item.body}
                 </p>
               </div>

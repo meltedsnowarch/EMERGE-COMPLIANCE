@@ -10,7 +10,7 @@ html {
 
 body {
   background: #ffffff;
-  color: #292524;
+  color: #1A1A1A;
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -131,24 +131,24 @@ body {
 }
 
 .service-row:hover .service-row-title {
-  color: #1c1917;
+  color: #1A1A1A;
 }
 
 .service-row:hover .service-row-price {
-  color: #78716c;
+  color: #2C2C2A;
 }
 
 .service-row-title {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #44403c;
+  color: #1A1A1A;
   line-height: 1.4;
   transition: color 0.15s ease;
 }
 
 .service-row-price {
   font-size: 0.75rem;
-  color: #a8a29e;
+  color: #2C2C2A;
   white-space: nowrap;
   flex-shrink: 0;
   margin-top: 0.125rem;
