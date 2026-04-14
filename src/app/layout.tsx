@@ -85,18 +85,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* ── FOOTER ───────────────────────────────────────────────────── */}
-        <footer
-          data-design-id="footer"
-          className="border-t border-blue-900 px-6 py-6"
-          style={{ background: "#1B2A4A" }}
-        >
-          <div className="max-w-5xl mx-auto">
-            <p className="text-xs" style={{ color: "#FFFFFF" }}>
-              James Lawler &middot; RIAI Registered Member &middot; 2026
-            </p>
-          </div>
-        </footer>
+        
 
       </body>
     </html>

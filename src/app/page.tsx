@@ -135,7 +135,7 @@ export default function HomePage() {
       <section
         data-design-id="how-it-works"
         id="how-it-works"
-        className="border-b border-blue-900 px-6 py-16 sm:py-20"
+        className="border-b border-blue-900 px-6 py-[3.2rem] sm:py-16"
         style={{ background: "#1B2A4A" }}
       >
         <div className="max-w-5xl mx-auto">
@@ -165,11 +165,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── DIVIDER ───────────────────────────────────────────────────── */}
-      <section data-design-id="divider" className="px-6 py-10">
+      {/* ── DIVIDER + FOOTER NOTE ─────────────────────────────────────── */}
+      <section data-design-id="divider" className="px-6 pt-10 pb-12">
         <div className="max-w-5xl mx-auto">
           <div className="w-1/3 h-px" style={{ background: "#e7e0d0" }} />
         </div>
+        <p className="mt-6 text-xs text-center text-stone-400">
+          James Lawler &middot; RIAI Registered Member &middot; 2026
+        </p>
       </section>
     </>
   );
