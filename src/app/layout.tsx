@@ -68,12 +68,9 @@ export default function RootLayout({
               </Link>
               <Link
                 href="/contact"
-                className="text-sm text-stone-500 hover:text-stone-900 transition-colors hidden sm:block"
+                className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
               >
                 Contact
-              </Link>
-              <Link href="/contact" className="btn-primary !py-2 !px-5 !text-xs">
-                Get a Quote
               </Link>
             </nav>
           </div>
@@ -139,8 +136,8 @@ export default function RootLayout({
                       </a>
                     </li>
                     <li>
-                      <a href="mailto:meltedsnowarch@protonmail.com" className="text-xs text-stone-500 hover:text-stone-900 transition-colors">
-                        meltedsnowarch@protonmail.com
+                      <a href="mailto:emergearchservices@protonmail.com" className="text-xs text-stone-500 hover:text-stone-900 transition-colors">
+                        emergearchservices@protonmail.com
                       </a>
                     </li>
                     <li className="text-xs text-stone-400">Dublin, Ireland</li>

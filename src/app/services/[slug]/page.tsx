@@ -75,8 +75,11 @@ export default async function ServicePage({
             )}
 
             <div className="mt-10 pt-8 border-t border-stone-100">
-              <Link href="/contact" className="btn-primary">
-                Get a Quote
+              <Link
+                href="/contact"
+                className="text-sm font-semibold text-stone-900 hover:text-stone-600 transition-colors"
+              >
+                Contact us to enquire &rarr;
               </Link>
             </div>
           </div>
@@ -118,13 +121,16 @@ export default async function ServicePage({
                 </p>
               </div>
 
-              <div className="pt-1">
-                <Link href="/contact" className="btn-primary block text-center">
-                  Get a Quote
+              <div className="pt-1 border-t border-stone-100">
+                <Link
+                  href="/contact"
+                  className="block text-sm font-semibold text-stone-900 hover:text-stone-600 transition-colors pt-4"
+                >
+                  Contact us to enquire &rarr;
                 </Link>
               </div>
 
-              <div className="pt-2 border-t border-stone-100">
+              <div className="border-t border-stone-100">
                 <p className="text-xs text-stone-400 leading-relaxed">
                   Documents issued in the Law Society of Ireland standard format. Accepted by all major banks and the Property Registration Authority of Ireland.
                 </p>

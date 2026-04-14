@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
-  SERVICES,
   CATEGORY_ORDER,
   CATEGORY_LABELS,
   getServicesByCategory,
+  type ServiceCategory,
 } from "@/lib/services";
 
 const DELAY = [
@@ -13,26 +13,33 @@ const DELAY = [
   "animate-fade-up-delay-4",
 ] as const;
 
+/* Colour band for each column header */
+const COLUMN_BG: Record<ServiceCategory, string> = {
+  "maps-declarations":  "#F4EFE4",
+  "compliance-opinions": "#F7F3EB",
+  planning:             "#FAF8F3",
+};
+
 const HOW_IT_WORKS = [
   {
     step: "01",
     title: "Submit your enquiry",
-    body: "Contact us by phone or email with the property address and the service required. We will respond the same day.",
+    body: "Contact me by phone or email with the property address and the service required. I will respond usually on the same day.",
   },
   {
     step: "02",
-    title: "We confirm the details",
-    body: "We review the property details and confirm the exact service needed, the fixed fee, and availability for a survey.",
+    title: "Confirm the details",
+    body: "I review the property details and confirm the exact service needed, the fixed fee, and availability for a survey.",
   },
   {
     step: "03",
-    title: "Survey within 48 hours",
-    body: "Our RIAI architect attends the property to carry out a visual inspection of the works or to survey the boundaries.",
+    title: "Survey usually within 48 hours",
+    body: "I visit the property to carry out a visual inspection of the works or to survey the boundaries and other relevant matters.",
   },
   {
     step: "04",
     title: "Certificate issued same day",
-    body: "The signed, certified document is issued to your solicitor or estate agent on the same day as the site survey.",
+    body: "The signed, certified document is issued to the homeowner, solicitor or estate agent within 48 hours.",
   },
 ] as const;
 
@@ -42,7 +49,7 @@ export default function HomePage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         data-design-id="hero"
-        className="border-b border-stone-100 px-6 pt-20 pb-20 sm:pt-28 sm:pb-24"
+        className="px-6 pt-20 pb-8 sm:pt-28 sm:pb-10"
       >
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl animate-fade-up">
@@ -53,16 +60,8 @@ export default function HomePage() {
               Architectural compliance documents for property transactions in Ireland.
             </h1>
             <p className="mt-5 text-base text-stone-500 font-light leading-relaxed max-w-xl">
-              We provide Land Registry maps, Opinions on Compliance, Planning Certificates, and Declarations of Identity for solicitors and estate agents — with a 48-hour turnaround on most services.
+              Land Registry maps, Opinions on Compliance, and Declarations of Identity for solicitors and estate agents — with a 48-hour turnaround on most services.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                Get a Quote
-              </Link>
-              <Link href="#services" className="btn-ghost">
-                View Services
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -71,35 +70,29 @@ export default function HomePage() {
       <section
         data-design-id="services"
         id="services"
-        className="border-b border-stone-100 px-6 py-16 sm:py-20"
+        className="border-b border-stone-100 px-6 pt-8 pb-14 sm:pt-10 sm:pb-16"
       >
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-10 animate-fade-up">
-            Services
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 md:divide-x divide-stone-100">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {CATEGORY_ORDER.map((category, i) => {
               const services = getServicesByCategory(category);
               return (
                 <div
                   key={category}
-                  className={[
-                    DELAY[i],
-                    i === 0 ? "pb-10 md:pb-0 md:pr-10" : "",
-                    i === 1 ? "py-10 md:py-0 md:px-10 border-t md:border-t-0 border-stone-100" : "",
-                    i === 2 ? "pt-10 md:pt-0 md:pl-10 border-t md:border-t-0 border-stone-100" : "",
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
+                  className={`border border-stone-200 overflow-hidden ${DELAY[i]}`}
                 >
-                  {/* Column label */}
-                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-5">
-                    {CATEGORY_LABELS[category]}
-                  </p>
+                  {/* Colour band header */}
+                  <div
+                    className="px-5 py-4 border-b border-stone-200"
+                    style={{ background: COLUMN_BG[category] }}
+                  >
+                    <p className="text-sm font-bold text-stone-800 tracking-tight">
+                      {CATEGORY_LABELS[category]}
+                    </p>
+                  </div>
 
                   {/* Service rows */}
-                  <ul>
+                  <ul className="px-5">
                     {services.map((service) => (
                       <li key={service.slug}>
                         <Link
@@ -152,30 +145,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section
-        data-design-id="cta"
-        className="px-6 py-16 sm:py-20"
-      >
-        <div className="max-w-5xl mx-auto animate-fade-up">
-          <div
-            className="w-8 h-px mb-7"
-            style={{ background: "#c9b99a" }}
-          />
-          <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight mb-4">
-            Ready to proceed?
-          </h2>
-          <p className="text-sm text-stone-500 font-light leading-relaxed max-w-md mb-8">
-            Most compliance documents are issued on the same day as the site survey. Call or email to instruct, or submit an online enquiry.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-primary">
-              Get a Quote
-            </Link>
-            <a href="tel:0834516091" className="btn-ghost">
-              083 451 6091
-            </a>
-          </div>
+      {/* ── DIVIDER ───────────────────────────────────────────────────── */}
+      <section data-design-id="divider" className="px-6 py-10">
+        <div className="max-w-5xl mx-auto">
+          <div className="w-full h-px" style={{ background: "#e7e0d0" }} />
         </div>
       </section>
     </>
