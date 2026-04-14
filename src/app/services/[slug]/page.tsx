@@ -68,73 +68,25 @@ export default async function ServicePage({
               {service.description}
             </p>
 
-            {service.turnaround && (
-              <p className="mt-6 text-sm font-medium text-stone-800">
-                {service.turnaround}.
-              </p>
-            )}
-
             <div className="mt-10 pt-8 border-t border-stone-100">
               <Link
                 href="/contact"
                 className="text-sm font-semibold text-stone-900 hover:text-stone-600 transition-colors"
               >
-                Contact us to enquire &rarr;
+                Contact me to enquire
               </Link>
             </div>
           </div>
 
-          {/* Right — fee card (1/3 width) */}
+          {/* Right — sidebar (1/3 width) */}
           <div className="animate-fade-up-delay-1">
-            <div className="border border-stone-100 p-6 space-y-7">
-
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-2">
-                  Fee
-                </p>
-                <p className="text-3xl font-bold text-stone-900 tracking-tight">
-                  {service.price}
-                </p>
-              </div>
-
-              {service.turnaround && (
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-2">
-                    Turnaround
-                  </p>
-                  <p className="text-sm text-stone-700 font-medium">
-                    {service.turnaround}
-                  </p>
-                </div>
-              )}
-
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-2">
-                  Prepared by
-                </p>
-                <p className="text-sm text-stone-700 leading-relaxed">
-                  James Lawler MRIAI
-                  <br />
-                  RIAI Registered Architect
-                  <br />
-                  Dublin, Ireland
-                </p>
-              </div>
-
-              <div className="pt-1 border-t border-stone-100">
-                <Link
-                  href="/contact"
-                  className="block text-sm font-semibold text-stone-900 hover:text-stone-600 transition-colors pt-4"
-                >
-                  Contact us to enquire &rarr;
-                </Link>
-              </div>
-
-              <div className="border-t border-stone-100">
-                <p className="text-xs text-stone-400 leading-relaxed">
-                  Documents issued in the Law Society of Ireland standard format. Accepted by all major banks and the Property Registration Authority of Ireland.
-                </p>
-              </div>
+            <div className="border border-stone-100 p-6 space-y-6">
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Prepared by James Lawler, RIAI Registered Architect, Dublin, Ireland.
+              </p>
+              <Link href="/contact" className="btn-primary block text-center">
+                Book Now
+              </Link>
             </div>
           </div>
 

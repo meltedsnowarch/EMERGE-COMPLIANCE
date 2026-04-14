@@ -49,17 +49,17 @@ export default function HomePage() {
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         data-design-id="hero"
-        className="px-6 pt-20 pb-8 sm:pt-28 sm:pb-10"
+        className="px-6 pt-8 pb-8 sm:pt-10 sm:pb-10"
       >
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl animate-fade-up">
-            <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-7">
+            <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-5">
               RIAI Registered Architect &middot; Dublin &middot; Ireland
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-stone-900 tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-[1.8rem] md:text-[2.2rem] font-bold text-stone-900 tracking-tight leading-tight">
               Architectural compliance documents for property transactions in Ireland.
             </h1>
-            <p className="mt-5 text-base text-stone-500 font-light leading-relaxed max-w-xl">
+            <p className="mt-4 text-sm text-stone-500 font-light leading-relaxed max-w-xl">
               Land Registry maps, Opinions on Compliance, and Declarations of Identity for solicitors and estate agents — with a 48-hour turnaround on most services.
             </p>
           </div>
