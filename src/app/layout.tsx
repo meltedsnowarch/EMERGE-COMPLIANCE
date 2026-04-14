@@ -10,16 +10,19 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "EMERGE Legal — Architectural Compliance Services for Solicitors & Estate Agents",
+  title: {
+    default: "EMERGE Legal — Architectural Compliance Services Ireland",
+    template: "%s | EMERGE Legal",
+  },
   description:
-    "Fast, reliable architectural compliance documents for solicitors and estate agents across Ireland. Land Registry Compliant Maps, RIAI Opinions on Compliance with Building Regulations, and Declarations of Identity. James Lawler MRIAI, Dublin.",
+    "Architectural compliance documents for solicitors and estate agents across Ireland. Land Registry maps, Opinions on Compliance, Planning Certificates, and Declarations of Identity. RIAI registered architect. 48-hour turnaround.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <head>
@@ -30,130 +33,126 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans bg-white">
 
-        {/* ── NAVIGATION ────────────────────────────────────────── */}
-        <nav
+        {/* ── HEADER / NAV ─────────────────────────────────────────────── */}
+        <header
           data-design-id="nav"
-          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-stone-200"
-          style={{ background: "rgba(244,239,228,0.95)" }}
+          className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-100"
         >
-          <div
-            data-design-id="nav-container"
-            className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
-          >
+          <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <Link
               data-design-id="nav-logo"
               href="/"
-              className="text-lg tracking-tight text-stone-900"
+              className="text-base tracking-tight text-stone-900 hover:opacity-80 transition-opacity"
             >
-              <span className="font-bold">EMERGE</span>{" "}
-              <span className="font-light">Legal</span>
+              <span className="font-bold">EMERGE</span>
+              <span className="font-light"> Legal</span>
             </Link>
 
-            <div data-design-id="nav-links" className="flex items-center gap-8">
+            <nav
+              data-design-id="nav-links"
+              className="flex items-center gap-6 sm:gap-8"
+            >
               <Link
-                data-design-id="nav-link-services"
                 href="/#services"
-                className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
+                className="text-sm text-stone-500 hover:text-stone-900 transition-colors hidden sm:block"
               >
                 Services
               </Link>
               <Link
-                data-design-id="nav-link-about"
-                href="/#about"
-                className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
+                href="/#how-it-works"
+                className="text-sm text-stone-500 hover:text-stone-900 transition-colors hidden sm:block"
               >
-                About
+                How it works
               </Link>
               <Link
-                data-design-id="nav-link-contact"
                 href="/contact"
-                className="text-sm text-stone-500 hover:text-stone-900 transition-colors"
+                className="text-sm text-stone-500 hover:text-stone-900 transition-colors hidden sm:block"
               >
                 Contact
               </Link>
-            </div>
+              <Link href="/contact" className="btn-primary !py-2 !px-5 !text-xs">
+                Get a Quote
+              </Link>
+            </nav>
           </div>
-        </nav>
+        </header>
 
-        <main data-design-id="main" className="flex-1">
+        <main data-design-id="main" className="flex-1 pt-16">
           {children}
         </main>
 
-        {/* ── FOOTER ────────────────────────────────────────────── */}
+        {/* ── FOOTER ───────────────────────────────────────────────────── */}
         <footer
           data-design-id="footer"
-          className="border-t border-stone-200 py-12 px-6"
-          style={{ background: "#F4EFE4" }}
+          className="border-t border-stone-100 bg-white py-10 px-6"
         >
-          <div
-            data-design-id="footer-container"
-            className="max-w-5xl mx-auto"
-          >
-            {/* Top row */}
-            <div className="flex flex-col sm:flex-row items-start justify-between gap-8">
+          <div className="max-w-5xl mx-auto">
 
-              {/* Brand + tagline */}
-              <div data-design-id="footer-brand-block">
-                <p className="text-base tracking-tight text-stone-800">
-                  <span className="font-bold">EMERGE</span>{" "}
-                  <span className="font-light">Legal</span>
+            {/* Main footer row */}
+            <div className="flex flex-col sm:flex-row justify-between gap-8 mb-10">
+
+              {/* Brand */}
+              <div>
+                <p className="text-sm tracking-tight text-stone-800 mb-1">
+                  <span className="font-bold">EMERGE</span>
+                  <span className="font-light"> Legal</span>
                 </p>
-                <p className="mt-1 text-xs text-stone-500 leading-relaxed max-w-xs">
-                  Architectural compliance services for property transactions in Ireland.
+                <p className="text-xs text-stone-400 leading-relaxed max-w-xs">
+                  Architectural compliance documents for property transactions in Ireland. RIAI registered architect.
                 </p>
               </div>
 
-              {/* Navigation columns */}
-              <div className="flex gap-16 sm:gap-20">
-                <div data-design-id="footer-col-services">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">Services</p>
+              {/* Link columns */}
+              <div className="flex gap-12 sm:gap-16">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">
+                    Services
+                  </p>
                   <ul className="space-y-2">
                     <li>
-                      <Link href="/#services" className="text-xs text-stone-600 hover:text-stone-900 transition-colors">
-                        Land Registry Maps
+                      <Link href="/services/opinion-compliance-planning" className="text-xs text-stone-500 hover:text-stone-900 transition-colors">
+                        Compliance Opinions
                       </Link>
                     </li>
                     <li>
-                      <Link href="/#services" className="text-xs text-stone-600 hover:text-stone-900 transition-colors">
-                        RIAI Opinions on Compliance
+                      <Link href="/services/exemption-certificate" className="text-xs text-stone-500 hover:text-stone-900 transition-colors">
+                        Planning
                       </Link>
                     </li>
                     <li>
-                      <Link href="/#services" className="text-xs text-stone-600 hover:text-stone-900 transition-colors">
-                        Declaration of Identity
+                      <Link href="/services/land-registry-map-house" className="text-xs text-stone-500 hover:text-stone-900 transition-colors">
+                        Maps &amp; Declarations
                       </Link>
                     </li>
                   </ul>
                 </div>
-
-                <div data-design-id="footer-col-contact">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">Contact</p>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-3">
+                    Contact
+                  </p>
                   <ul className="space-y-2">
                     <li>
-                      <a href="tel:0834516091" className="text-xs text-stone-600 hover:text-stone-900 transition-colors">
+                      <a href="tel:0834516091" className="text-xs text-stone-500 hover:text-stone-900 transition-colors">
                         083 451 6091
                       </a>
                     </li>
                     <li>
-                      <a href="mailto:meltedsnowarch@protonmail.com" className="text-xs text-stone-600 hover:text-stone-900 transition-colors">
+                      <a href="mailto:meltedsnowarch@protonmail.com" className="text-xs text-stone-500 hover:text-stone-900 transition-colors">
                         meltedsnowarch@protonmail.com
                       </a>
                     </li>
-                    <li className="text-xs text-stone-500">Dublin, Ireland</li>
+                    <li className="text-xs text-stone-400">Dublin, Ireland</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            {/* Divider */}
-            <hr className="section-rule mt-10 mb-6" />
-
-            {/* Bottom row */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+            {/* Bottom bar */}
+            <div className="border-t border-stone-100 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
               <p className="text-xs text-stone-400">
-                James Lawler MRIAI — RIAI Registered Member 2026
+                James Lawler MRIAI · RIAI Registered Practice Member 2026
               </p>
               <p className="text-xs text-stone-400">
                 © {new Date().getFullYear()} EMERGE Legal
