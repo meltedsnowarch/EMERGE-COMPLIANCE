@@ -24,6 +24,12 @@ export default function ContactPage() {
           >
             Contact
           </h1>
+          <p
+            data-design-id="contact-intro"
+            className="mt-3 text-sm text-stone-500 font-light leading-relaxed max-w-md"
+          >
+            To instruct a service or request a fee quote, call or email directly. Responses are typically same-day.
+          </p>
         </div>
 
         <div

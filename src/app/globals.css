@@ -21,7 +21,7 @@ body {
   color: #1c1917;
 }
 
-/* fade-up on scroll */
+/* ── Animations ────────────────────────────────────────────── */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -33,23 +33,15 @@ body {
   }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.6s ease-out both;
-}
+.animate-fade-up            { animation: fadeUp 0.6s ease-out both; }
+.animate-fade-up-delay-1    { animation: fadeUp 0.6s 0.10s ease-out both; }
+.animate-fade-up-delay-2    { animation: fadeUp 0.6s 0.20s ease-out both; }
+.animate-fade-up-delay-3    { animation: fadeUp 0.6s 0.30s ease-out both; }
+.animate-fade-up-delay-4    { animation: fadeUp 0.6s 0.40s ease-out both; }
+.animate-fade-up-delay-5    { animation: fadeUp 0.6s 0.50s ease-out both; }
+.animate-fade-up-delay-6    { animation: fadeUp 0.6s 0.60s ease-out both; }
 
-.animate-fade-up-delay-1 {
-  animation: fadeUp 0.6s 0.1s ease-out both;
-}
-
-.animate-fade-up-delay-2 {
-  animation: fadeUp 0.6s 0.2s ease-out both;
-}
-
-.animate-fade-up-delay-3 {
-  animation: fadeUp 0.6s 0.3s ease-out both;
-}
-
-/* details/summary card styles */
+/* ── Service cards ─────────────────────────────────────────── */
 .service-card summary::-webkit-details-marker,
 .service-card summary::marker {
   display: none;
@@ -62,4 +54,55 @@ body {
 
 .service-card[open] > summary .service-card-icon {
   transform: rotate(45deg);
+}
+
+/* ── Process step connectors ───────────────────────────────── */
+.process-step {
+  position: relative;
+}
+
+/* ── Divider rule ──────────────────────────────────────────── */
+.section-rule {
+  border: none;
+  border-top: 1px solid #e7e0d0;
+  margin: 0;
+}
+
+/* ── CTA button ────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  padding: 0.625rem 1.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #292524;
+  border: 1px solid #292524;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #1c1917;
+  border-color: #1c1917;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.625rem 1.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #292524;
+  background: transparent;
+  border: 1px solid #d6cfc4;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  border-color: #292524;
+  color: #1c1917;
 }
